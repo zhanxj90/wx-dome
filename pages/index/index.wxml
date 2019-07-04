@@ -1,0 +1,62 @@
+<wxs src="index.wxs" module="utils"/>
+<view class='search_contain'>
+  <view class='search'>
+    <icon type='search' size='14' />
+    <input />
+  </view>
+</view>
+<view class='card'>
+  <view class='card_contain'>
+    <view class='card_header'>
+      <text>影院热映</text>
+      <text>查看更多></text>
+    </view>
+    <view class='card_content'>
+      <scroll-view scroll-x='true'>
+      <view class='card_items'>
+        <block wx:for='{{movies}}' wx:key='{{index}}'>
+          <view class='card_item' bindtap='handleClick' data-id='{{item.id}}' data-name='{{item.title}}'>
+            <cover-image src='{{item.cover.url}}' />
+            <text class='item_title'>{{item.title}}</text>
+            <view class='item_rating'>
+              <view class='item_stars'>
+              <block wx:for="{{n}}" wx:for-item="data" wx:for-index="idx" wx:key="{{idx}}" >
+                <text class="{{utils.scoreTo(item.rating.value)>idx?'scoreActive':''}}">☆</text>
+              </block>
+              </view>
+              <text>{{item.rating.value}}</text>
+            </view>
+          </view>
+        </block>
+      </view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class='card_contain'>
+    <view class='card_header'>
+      <text>免费在线观看</text>
+      <text>查看更多></text>
+    </view>
+    <view class='card_content'>
+      <scroll-view scroll-x='true'>
+        <view class='card_items'>
+        <block wx:for='{{freeMovie}}' wx:key='{{index}}'>
+          <view class='card_item' bindtap='handleClick' data-id='{{item.id}}' data-name='{{item.title}}'>
+            <cover-image src='{{item.cover.url}}' />
+            <text class='item_title'>{{item.title}}</text>
+            <view class='item_rating'>
+              <view class='item_stars'>
+              <block wx:for="{{n}}" wx:for-item="data" wx:for-index="idx" wx:key="{{idx}}" >
+                <text class="{{utils.scoreTo(item.rating.value)>idx?'scoreActive':''}}">☆</text>
+              </block>
+              </view>
+              <text>{{item.rating.value}}</text>
+            </view>
+          </view>
+        </block>
+        </view>
+      </scroll-view>
+    </view>
+  </view>
+
+</view>

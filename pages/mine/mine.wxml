@@ -1,0 +1,10 @@
+<!--pages/mine/mine.wxml-->
+<text>pages/mine/mine.wxml</text>
+<navigator url='/pages/index/index' open-type='switchTab'>去首页</navigator>
+<navigator url='/pages/detail/detail' >去详情</navigator>
+<navigator url='/pages/detail/detail' open-type='redirect'>重定向到详情</navigator>
+<navigator url='/pages/bink/bink' open-type='reLaunch'>去榜单</navigator>
+
+<button open-type='share'>分享按钮授权</button>
+<button open-type='getUserInfo' bindgetuserinfo='handleInfo'>信息按钮授权</button>
+<button bindtap='getInfo'>录音接口授权</button>

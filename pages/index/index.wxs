@@ -1,0 +1,7 @@
+function scoreTo(n) {
+  return parseInt(Math.ceil(n) / 2)
+}
+
+module.exports = {
+  scoreTo: scoreTo
+}
